@@ -4,30 +4,26 @@ patients <- read.csv("heart.csv")
 
 ############################################ ETUDE SUR LA VARIABLE AGE ############################################
 summary(patients$Age)
-tranches_age <- cut(patients$Age, breaks = seq(0, 100, by = 10))
-barplot(table(tranches_age), main = "Répartition des patients d'âge", xlab = "Tranches d'âge", ylab = "Nombre de patients", col = "steelblue", las = 2)
-#boxplot(patients$Age, main = "Age de la population etudie", xlab = "Age", col = "lightblue")
+hist(patients$Age, main = "Répartition des patients d'âge", xlab = "Tranches d'âge", ylab = "Nombre de patients", col = "steelblue")
 
 ############################################ ETUDE SUR LA VARIABLE Sexe ############################################
 summary(patients$Sex)
 barplot(table(patients$Sex), main = "Repartition des sexes", xlab = "Sex", ylab = "Nombre de patients", col = "Steelblue")
 
 ############################################ ETUDE SUR LA VARIABLE ChestPainType ############################################
-summary(patients$ChestPainType)
 #TODO expliquer la différence entre les maladies
+summary(patients$ChestPainType)
 barplot(table(patients$ChestPainType), main = "Repartition des type de douleurs", xlab = "Type de maladie", ylab = "Population", col = "Steelblue")
 
 ############################################ ETUDE SUR LA VARIABLE RestingBP ############################################
 #pression artérielle au repos, exprimée en mm Hg.
 summary(patients$RestingBP)
-tranches_RestingBP <- cut(patients$RestingBP, breaks = seq(80,200, by = 20))
-barplot(table(tranches_RestingBP), main = "Pression artérielle au repos en mm Hg", xlab = "Pression artérielle (repos)", ylab = "Population", col = "steelblue")
+hist(patients$RestingBP, main = "Pression artérielle au repos en mm Hg", xlab = "Pression artérielle (repos)", ylab = "Population", col = "steelblue")
 
 ############################################ ETUDE SUR LA VARIABLE Cholesterol ############################################
 # taux de cholestérol sérique, exprimé en mg/dl
 summary(patients$Cholesterol)
-tranches_Cholesterol <- cut(patients$RestingBP, breaks = seq(80,200, by = 20))
-barplot(table(tranches_Cholesterol), main = "Taux de Cholestérol mg/dl", xlab = "Cholestérol", ylab = "Population", col = "steelblue")
+hist(patients$Cholesterol, main = "Taux de Cholestérol mg/dl", xlab = "Cholestérol", ylab = "Population", col = "steelblue")
 
 ############################################ ETUDE SUR LA VARIABLE FastingBS ############################################
 #glycémie à jeun.
@@ -45,8 +41,7 @@ barplot(table(patients$RestingECG), main = "Au repos", xlab = "Type de résultat
 
 ############################################ ETUDE SUR LA VARIABLE MaxHR ############################################
 # fréquence cardiaque maximale atteinte, avec une valeur comprise entre 60 et 202.
-tranche_MaxHR <- cut(patients$MaxHR, breaks = seq(60, 220, by = 20))
-barplot(table(tranche_MaxHR), main = "Frequence cardiaque maximale", xlab = "Fréquence", ylab = "Population", col = "Steelblue", las = 2)
+hist(patients$MaxHR, main = "Frequence cardiaque maximale", xlab = "Fréquence", ylab = "Population", col = "Steelblue", las = 2)
 
 
 ############################################ ETUDE SUR LA VARIABLE ExerciseAngina ############################################

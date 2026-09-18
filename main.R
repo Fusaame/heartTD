@@ -97,3 +97,9 @@ barplot(table(patients$HeartDisease), main = "Presence de maladie cardiaque", yl
 # Faire une regression logistique (Bonus)
 
 
+# Afficher les variables quantitatives pour avoir les valeurs aberrantes
+par(mfrow = c(1, 4))
+boxplot(patients$Age, main = "Age", col = "steelblue")
+boxplot(patients$RestingBP, main = "RestingBP", col = "steelblue")
+boxplot(patients$Cholesterol, main = "Cholesterol", col = "steelblue")
+boxplot(patients$MaxHR, main = "MaxHR", col = "steelblue")
